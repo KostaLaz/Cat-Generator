@@ -22,5 +22,26 @@ div.appendChild(image);
 }
 
 function rpsGame(playerChoice){
+console.log(playerChoice);
+let humanChoice, botChoice;
+botChoice = numTberoChoice(ranToRpsInt());
+alert(botChoice);
+}
 
+function ranToRpsInt(){
+    return Math.floor(Math.random()*3);
+
+   
+    
+}
+function numTberoChoice(number){
+    return ['rock', 'paper', 'scissors'][number];
+}
+function desideWinner(playerChoice, botChoice){
+    let rpsData{
+        'rock': {'scissors': 1, 'rock': 0.5, 'paper': 0},
+        'paper': {'rock': 1, 'paper': 0.5, 'scissors': 0},
+        'scissors': {'paper': 1, 'scissors': 0.5, 'rock': 0}
+    }
+    let yourScore = rpsData[];
 }
