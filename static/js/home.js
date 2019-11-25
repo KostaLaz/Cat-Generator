@@ -21,11 +21,14 @@ image.src ='https://cataas.com//cat/gif';
 div.appendChild(image);
 }
 
-function rpsGame(playerChoice){
-console.log(playerChoice);
+function rpsGame(yourChoice){
+console.log(yourChoice);
 let humanChoice, botChoice;
+humanChoice = yourChoice.id;
 botChoice = numTberoChoice(ranToRpsInt());
-alert(botChoice);
+console.log('Computer choice:' + botChoice);
+results = desideWinner(humanChoice, botChoice);
+console.log(results);
 }
 
 function ranToRpsInt(){
@@ -37,11 +40,17 @@ function ranToRpsInt(){
 function numTberoChoice(number){
     return ['rock', 'paper', 'scissors'][number];
 }
-function desideWinner(playerChoice, botChoice){
-    let rpsData{
+function desideWinner(yourChoice, computerChoice){
+    let rpsData = {
         'rock': {'scissors': 1, 'rock': 0.5, 'paper': 0},
         'paper': {'rock': 1, 'paper': 0.5, 'scissors': 0},
         'scissors': {'paper': 1, 'scissors': 0.5, 'rock': 0}
     }
-    let yourScore = rpsData[];
+    let yourScore = rpsData[yourChoice][computerChoice];
+    let computerScore = rpsData[computerChoice][yourChoice];
+    return yourScore, computerScore;
+}
+
+function finalMessage(yourScore, computerScore){
+
 }
