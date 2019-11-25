@@ -13,6 +13,7 @@ function ageInDays(){
 function reset(){
     document.getElementById('ageInDays').remove();
 }
+// Challenge 2 Cat Generator
 
 function generateCat(){
 let image = document.createElement('img');
@@ -20,6 +21,8 @@ let div = document.getElementById('flex-cat-gen');
 image.src ='https://cataas.com//cat/gif';
 div.appendChild(image);
 }
+
+//Challenge 3 Rock, Paper, Scissors
 
 function rpsGame(yourChoice){
 console.log(yourChoice);
@@ -29,17 +32,19 @@ botChoice = numTberoChoice(ranToRpsInt());
 console.log('Computer choice:' + botChoice);
 results = desideWinner(humanChoice, botChoice);
 console.log(results);
+message = finalMessage(results);
+console.log(message);
 }
 
 function ranToRpsInt(){
     return Math.floor(Math.random()*3);
-
-   
     
 }
+
 function numTberoChoice(number){
     return ['rock', 'paper', 'scissors'][number];
 }
+
 function desideWinner(yourChoice, computerChoice){
     let rpsData = {
         'rock': {'scissors': 1, 'rock': 0.5, 'paper': 0},
@@ -52,5 +57,23 @@ function desideWinner(yourChoice, computerChoice){
 }
 
 function finalMessage(yourScore, computerScore){
+if(yourScore === 0){
+    return {'message': 'You win', 'color': 'green'};
+}else if(yourScore === 0.5){
+        return {'message': 'You draw', 'color': 'yellow'};
+}else if(yourScore === 1){
+    return {'message': 'You lose', 'color': 'red'};
+}
+}
 
+function rspFrontEnd(humanChoiceImg, BotChoiceImg, finalMessage){
+     imgDataBase = {
+         'rock': decodeURIComponent.getElementById('rock').src,
+         'paper': decodeURIComponent.getElementById('paper').src,
+         'scissors': decodeURIComponent.getElementById('scissors').src
+     }
+
+     document.getElementById('rock').remove;
+     document.getElementById('paper').remove;
+     document.getElementById('scissors').remove;
 }
