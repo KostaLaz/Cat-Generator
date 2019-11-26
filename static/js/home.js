@@ -34,6 +34,7 @@ results = desideWinner(humanChoice, botChoice);
 console.log(results);
 message = finalMessage(results);
 console.log(message);
+rspFrontEnd(yourChoice.id, botChoice, message);
 }
 
 function ranToRpsInt(){
@@ -61,19 +62,27 @@ if(yourScore === 0){
     return {'message': 'You win', 'color': 'green'};
 }else if(yourScore === 0.5){
         return {'message': 'You draw', 'color': 'yellow'};
-}else if(yourScore === 1){
+}else{
     return {'message': 'You lose', 'color': 'red'};
 }
 }
 
 function rspFrontEnd(humanChoiceImg, BotChoiceImg, finalMessage){
      imgDataBase = {
-         'rock': decodeURIComponent.getElementById('rock').src,
-         'paper': decodeURIComponent.getElementById('paper').src,
-         'scissors': decodeURIComponent.getElementById('scissors').src
+         'rock': document.getElementById('rock').src,
+         'paper': document.getElementById('paper').src,
+         'scissors': document.getElementById('scissors').src
      }
 
-     document.getElementById('rock').remove;
-     document.getElementById('paper').remove;
-     document.getElementById('scissors').remove;
+     document.getElementById('rock').remove();
+     document.getElementById('paper').remove();
+     document.getElementById('scissors').remove();
+
+     let humanDiv = document.createElement('div');
+     let botDiv = document.createElement('div');
+     let messageDiv = document.createElement('div');
+
+     humanDiv.innerHTML = "<img src'" + imgDataBase[humanChoiceImg] + "'>"
+
+     document.getElementById('flex-box-rps').appendChild(humanChoiceImg);
 }
