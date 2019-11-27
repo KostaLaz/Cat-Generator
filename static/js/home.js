@@ -78,11 +78,11 @@ function rspFrontEnd(humanChoiceImg, BotChoiceImg, finalMessage){
      document.getElementById('paper').remove();
      document.getElementById('scissors').remove();
 
-     let humanDiv = document.createElement('div');
-     let botDiv = document.createElement('div');
-     let messageDiv = document.createElement('div');
+     var humanDiv = document.createElement('div');
+     var botDiv = document.createElement('div');
+     var messageDiv = document.createElement('div');
 
-     humanDiv.innerHTML = "<img src'" + imgDataBase[humanChoiceImg] + "'>"
+     humanDiv.innerHTML = "<img src='" + imgDataBase[humanChoiceImg]  + "' height=150 width=300 >"
 
-     document.getElementById('flex-box-rps').appendChild(humanChoiceImg);
+     document.getElementById('flex-box-rps').appendChild(humanDiv);
 }
