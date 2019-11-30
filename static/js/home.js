@@ -82,7 +82,9 @@ function rspFrontEnd(humanChoiceImg, BotChoiceImg, finalMessage){
      var botDiv = document.createElement('div');
      var messageDiv = document.createElement('div');
 
-     humanDiv.innerHTML = "<img src='" + imgDataBase[humanChoiceImg]  + "' height=150 width=300 >"
+     humanDiv.innerHTML = "<img src='" + imgDataBase[humanChoiceImg]  + "' height=150 width=300 style='box-shadow: -2px 0px 15px 28px rgba(56,42,163,0.69);'>"
+     botDiv.innerHTML = "<img src='" + imgDataBase[BotChoiceImg]  + "' height=150 width=300 style='box-shadow: -2px 0px 15px 28px rgba(234,38,24,1);'>"
 
      document.getElementById('flex-box-rps').appendChild(humanDiv);
+     document.getElementById('flex-box-rps').appendChild(botDiv);
 }
