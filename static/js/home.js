@@ -126,5 +126,20 @@ function buttonGreen(){
        allButtons[i].classList.add('btn-success');
     }
 }
+function buttonYellow(){
+    for(let i=0; i<allButtons.length; i++){
+       allButtons[i].classList.remove(allButtons[i].classList[1]);
+       allButtons[i].classList.add('btn-warning');
+    }
+}
+function buttonReset(){
+    for(let i=0; i<allButtons.length; i++){
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add(copyAllButtons[i]);
+}
+}
+function buttonRandom(){
+    let choices = ['btn-danger', 'btn-success', 'btn-warning'];
+}
 
 
