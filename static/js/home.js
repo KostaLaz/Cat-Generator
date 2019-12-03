@@ -88,3 +88,24 @@ function rspFrontEnd(humanChoiceImg, BotChoiceImg, finalMessage){
      document.getElementById('flex-box-rps').appendChild(humanDiv);
      document.getElementById('flex-box-rps').appendChild(botDiv);
 }
+
+//Challenge 4 Change the colors of all buttons
+
+let allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
+let copyAllButtons = [];
+for(let i = 0; i < allButtons.length; i++ ){
+    copyAllButtons.push(allButtons[i]);
+}
+console.log(copyAllButtons);
+
+function buttonColorChange(buttonThingy){
+     if(buttonThingy.value === 'red'){
+         buttonRed();
+     } else if(buttonThingy.value === 'green'){
+         buttonGreen();
+     }else if(buttonThingy.value === 'yellow'){
+         buttonYellow();
+     }
+}
+
