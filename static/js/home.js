@@ -95,7 +95,7 @@ let allButtons = document.getElementsByTagName('button');
 console.log(allButtons);
 let copyAllButtons = [];
 for(let i = 0; i < allButtons.length; i++ ){
-    copyAllButtons.push(allButtons[i]);
+    copyAllButtons.push(allButtons[i].classList[1]);
 }
 console.log(copyAllButtons);
 
@@ -106,6 +106,25 @@ function buttonColorChange(buttonThingy){
          buttonGreen();
      }else if(buttonThingy.value === 'yellow'){
          buttonYellow();
+     }else if(buttonThingy.value === 'random'){
+         buttonRandom();
+     }
+     else{
+         buttonReset();
      }
 }
+
+function buttonRed(){
+    for(let i=0; i<allButtons.length; i++){
+       allButtons[i].classList.remove(allButtons[i].classList[1]);
+       allButtons[i].classList.add('btn-danger');
+    }
+}
+function buttonGreen(){
+    for(let i=0; i<allButtons.length; i++){
+       allButtons[i].classList.remove(allButtons[i].classList[1]);
+       allButtons[i].classList.add('btn-success');
+    }
+}
+
 
