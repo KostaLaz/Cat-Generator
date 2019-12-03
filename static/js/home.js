@@ -92,12 +92,10 @@ function rspFrontEnd(humanChoiceImg, BotChoiceImg, finalMessage){
 //Challenge 4 Change the colors of all buttons
 
 let allButtons = document.getElementsByTagName('button');
-console.log(allButtons);
 let copyAllButtons = [];
 for(let i = 0; i < allButtons.length; i++ ){
     copyAllButtons.push(allButtons[i].classList[1]);
 }
-console.log(copyAllButtons);
 
 function buttonColorChange(buttonThingy){
      if(buttonThingy.value === 'red'){
@@ -140,6 +138,13 @@ function buttonReset(){
 }
 function buttonRandom(){
     let choices = ['btn-danger', 'btn-success', 'btn-warning'];
+    for(let i=0; i<  allButtons.length; i++){
+        let randomNumber = Math.floor(Math.random()*3);
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add(choices[randomNumber]);
+    }
+        
+    
 }
 
 
